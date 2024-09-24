@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import Header from './Header'
 import { useState, useRef } from 'react'
 import { checkValidData } from '../utils/ValidateForm';
