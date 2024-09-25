@@ -2,9 +2,11 @@
 import Header from './Header'
 import { useState, useRef } from 'react'
 import { checkValidData } from '../utils/ValidateForm';
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from "firebase/auth";
 import {auth} from '../utils/firebase'
 import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { addUser } from '../utils/Redux/userSlice';
 
 const Login = () => {
   const [isSignInForm, setIsSignInForm] = useState(true);
@@ -14,6 +16,7 @@ const Login = () => {
   const email = useRef(null);
   const password = useRef(null);
 
+  const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const handleFormType = () => {
@@ -32,16 +35,23 @@ const Login = () => {
 
       createUserWithEmailAndPassword(auth, email.current.value, password.current.value)
         .then((userCredential) => {
-          // Signed up 
           const user = userCredential.user;
-          navigate('/browse');
-          // ...
+
+          updateProfile(user, {
+            displayName: name.current.value, 
+          })
+            .then(() => {
+              const {uid, displayName, email} = auth.currentUser;
+              dispatch(addUser({ uid: uid, email: email, displayName: displayName }));
+              navigate('/browse');
+            })
+            .catch((error) => {
+              setErrorMessage(error.message);
+            });
+
         })
         .catch((error) => {
-          const errorCode = error.code;
-          const errorMessage = error.message;
           setErrorMessage('User with this Email already exists');
-          // ..
         });
     }
 
@@ -49,7 +59,6 @@ const Login = () => {
 
       signInWithEmailAndPassword(auth, email.current.value, password.current.value)
         .then((userCredential) => {
-          // Signed up 
           const user = userCredential.user;
           navigate('/browse');
           // ...
@@ -96,7 +105,7 @@ const Login = () => {
         }
 
         <button onClick={handleSubmit}
-          className='mb-6 bg-[rgb(229,9,20)] px-3 py-2 w-full rounded-[5px]  font-bold'>
+          className='mb-6 bg-[rgb(229,9,20)] px-3 py-2 w-full rounded-[5px]  font-bold hover:bg-[rgb(201,8,18)]'>
           {isSignInForm ? "Sign In" : "Sign Up"}
         </button>
 
