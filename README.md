@@ -16,3 +16,5 @@
 - Implemented Signout
 - Unsubscribed onto the ontAuthStateChanged Callback
 - Add hardcoded values to constants file
+- Register TMDB API & create an app & get access token
+- Get Data from TMDB API
