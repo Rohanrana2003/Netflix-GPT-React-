@@ -9,6 +9,9 @@ import { addUser } from '../utils/Redux/userSlice';
 import { BACKGROUND_IMG } from '../utils/constants';
 
 const Login = () => {
+  document.title ='Netflix India - Watch TV Shows Online, Watch Movies Online';
+
+
   const [isSignInForm, setIsSignInForm] = useState(true);
   const [errorMessage, setErrorMessage] = useState(null);
 
@@ -72,7 +75,7 @@ const Login = () => {
     <div>
       <Header />
 
-      <div className='absolute '>
+      <div className='absolute'>
         <img src={BACKGROUND_IMG} alt="background-img" />
       </div>
 
