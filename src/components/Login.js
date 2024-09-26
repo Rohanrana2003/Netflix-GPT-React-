@@ -4,9 +4,9 @@ import { useState, useRef } from 'react'
 import { checkValidData } from '../utils/ValidateForm';
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from "firebase/auth";
 import {auth} from '../utils/firebase'
-import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { addUser } from '../utils/Redux/userSlice';
+import { BACKGROUND_IMG } from '../utils/constants';
 
 const Login = () => {
   const [isSignInForm, setIsSignInForm] = useState(true);
@@ -17,7 +17,6 @@ const Login = () => {
   const password = useRef(null);
 
   const dispatch = useDispatch();
-  const navigate = useNavigate();
 
   const handleFormType = () => {
     setIsSignInForm(!isSignInForm);
@@ -43,7 +42,6 @@ const Login = () => {
             .then(() => {
               const {uid, displayName, email} = auth.currentUser;
               dispatch(addUser({ uid: uid, email: email, displayName: displayName }));
-              navigate('/browse');
             })
             .catch((error) => {
               setErrorMessage(error.message);
@@ -60,8 +58,6 @@ const Login = () => {
       signInWithEmailAndPassword(auth, email.current.value, password.current.value)
         .then((userCredential) => {
           const user = userCredential.user;
-          navigate('/browse');
-          // ...
         })
         .catch((error) => {
           const errorCode = error.code;
@@ -77,7 +73,7 @@ const Login = () => {
       <Header />
 
       <div className='absolute '>
-        <img src="https://assets.nflxext.com/ffe/siteui/vlv3/47c2bc92-5a2a-4f33-8f91-4314e9e62ef1/web/IN-en-20240916-TRIFECTA-perspective_72df5d07-cf3f-4530-9afd-8f1d92d7f1a8_large.jpg" alt="background-img" />
+        <img src={BACKGROUND_IMG} alt="background-img" />
       </div>
 
       <form onSubmit={(e) => e.preventDefault()} className='absolute text-white bg-black w-4/12 py-6 px-16 my-24 mx-auto right-0 left-0 rounded-[5px] bg-opacity-85'>
@@ -105,7 +101,7 @@ const Login = () => {
         }
 
         <button onClick={handleSubmit}
-          className='mb-6 bg-[rgb(229,9,20)] px-3 py-2 w-full rounded-[5px]  font-bold hover:bg-[rgb(201,8,18)]'>
+          className='mb-6 bg-[] bg-gradient-to-b from-[rgb(255,0,13)] to-[rgb(133,1,8)] px-3 py-2 w-full rounded-[5px]  font-bold hover:bg-[rgb(201,8,18)]'>
           {isSignInForm ? "Sign In" : "Sign Up"}
         </button>
 

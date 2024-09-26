@@ -14,3 +14,5 @@
 - Created Redux store
 - Created Redux Store with user slice
 - Implemented Signout
+- Unsubscribed onto the ontAuthStateChanged Callback
+- Add hardcoded values to constants file
