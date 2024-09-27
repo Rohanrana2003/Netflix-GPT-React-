@@ -18,3 +18,10 @@
 - Add hardcoded values to constants file
 - Register TMDB API & create an app & get access token
 - Get Data from TMDB API
+- Created custom hook for NowPlaying movies
+- Created MovieSlice
+- Update store with MovieData
+- Created MainContainer and SecondaryContainer
+- Fetch Data for Background Video
+- Update store with background Video data
+- Embeded the Youtube Background video in UI 
