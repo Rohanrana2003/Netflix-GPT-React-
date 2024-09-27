@@ -25,3 +25,4 @@
 - Fetch Data for Background Video
 - Update store with background Video data
 - Embeded the Youtube Background video in UI 
+- Build Secondary Component
