@@ -9,7 +9,7 @@ const MainContainer = () => {
 
     if(!movies) return;
 
-    const mainMovie = movies[0];
+    const mainMovie = movies[8];
 
     const {id, original_title, overview} = mainMovie;
 
@@ -17,6 +17,9 @@ const MainContainer = () => {
     <div>
       <VideoTitle title={original_title} description={overview}/>
       <VideoBackground movie_id={id}/>
+      <div className='absolute bg-black bg-opacity-70 top-0 w-[100%] aspect-video' >
+      
+      </div>
     </div>
   )
 }

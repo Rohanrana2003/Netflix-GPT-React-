@@ -75,11 +75,14 @@ const Login = () => {
     <div>
       <Header />
 
+      <div className='absolute w-[100%] aspect-video bg-black opacity-45 z-30' ></div>
+
+
       <div className='absolute'>
         <img src={BACKGROUND_IMG} alt="background-img" />
       </div>
 
-      <form onSubmit={(e) => e.preventDefault()} className='absolute text-white bg-black w-4/12 py-6 px-16 my-24 mx-auto right-0 left-0 rounded-[5px] bg-opacity-85'>
+      <form onSubmit={(e) => e.preventDefault()} className='absolute text-white z-50 bg-black w-4/12 py-6 px-16 my-24 mx-auto right-0 left-0 rounded-[5px] bg-opacity-75'>
 
         <h1 className='text-[30px] font-bold my-7'>{isSignInForm ? "Sign In" : "Sign Up"}</h1>
 
