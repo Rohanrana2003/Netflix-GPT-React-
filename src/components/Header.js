@@ -43,7 +43,7 @@ const Header = () => {
 
     <div className='absolute w-[100%] pl-12  pt-1 bg-gradient-to-b from-black z-50 flex justify-between'>
 
-      <img className='w-40 mt-4 ' alt="netflix-logo" src={NETFLIX_LOGO} />
+      <img className='w-40 mt-4 ml-5 ' alt="netflix-logo" src={NETFLIX_LOGO} />
 
       {user && <div className='m-5 mr-14 bg-gradient-to-b from-[rgb(255,0,13)] to-[rgb(175,0,9)] h-fit py-[8px] text-sm px-3 cursor-pointer text-white rounded-md font-semibold 
                     hover:bg-[rgb(201,8,18)] '>

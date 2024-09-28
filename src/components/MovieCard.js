@@ -3,7 +3,7 @@ import { CARD_IMG_URL } from '../utils/constants'
 
 const MovieCard = ({path}) => {
   return (
-    <div className='w-40'>
+    <div className='w-40 pr-4'>
       <img src={CARD_IMG_URL + path} alt="CARD_IMG" />
     </div>
   )
