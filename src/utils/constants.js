@@ -28,3 +28,5 @@ export const LANG_OPTIONS = [
       {key:'portuguese' , name:'Portuguese'},
   
     ]
+
+export const OPENAI_KEY = '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';
