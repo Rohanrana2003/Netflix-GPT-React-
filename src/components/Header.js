@@ -6,37 +6,42 @@ import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { addUser, removeUser } from '../utils/Redux/userSlice';
 import { NETFLIX_LOGO } from '../utils/constants';
+import { toggleShowGPT } from '../utils/Redux/gptSlice';
 
 const Header = () => {
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  const user = useSelector((store)=>store.user);
+  const user = useSelector((store) => store.user);
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
-        const {uid, displayName, email} = user;
+        const { uid, displayName, email } = user;
         dispatch(addUser({ uid: uid, email: email, displayName: displayName }));
         navigate('/browse')
       } else {
-       dispatch(removeUser()); 
-       navigate('/')
+        dispatch(removeUser());
+        navigate('/')
       }
     });
 
-    return ()=> unsubscribe();
+    return () => unsubscribe();
   }, [])
 
-  const handleSignout = () =>{
+  const handleSignout = () => {
 
-      signOut(auth)
+    signOut(auth)
       .then(() => {
       })
       .catch((error) => {
         navigate('/error');
       });
+  }
+
+  const handleAI = () =>{
+    dispatch(toggleShowGPT());
   }
 
   return (
@@ -45,16 +50,24 @@ const Header = () => {
 
       <img className='w-40 mt-4 ml-5 ' alt="netflix-logo" src={NETFLIX_LOGO} />
 
-      {user && <div className='m-5 mr-14 bg-gradient-to-b from-[rgb(255,0,13)] to-[rgb(175,0,9)] h-fit py-[8px] text-sm px-3 cursor-pointer text-white rounded-md font-semibold 
-                    hover:bg-[rgb(201,8,18)] '>
+      {user &&
 
-        <button onClick={handleSignout}>Sign Out</button>
+        <div className='flex'>
 
-      </div>}
+            <button onClick={handleAI}
+              className='my-5 bg-gradient-to-b from-[rgb(255,0,13)] to-[rgb(175,0,9)] h-fit py-[8px] text-sm px-3 cursor-pointer text-white rounded-md font-semibold' >
+                AI Recommender</button>
+
+            <button onClick={handleSignout}
+              className='m-5 mr-14 bg-gradient-to-b from-[rgb(255,0,13)] to-[rgb(175,0,9)] h-fit py-[8px] text-sm px-3 cursor-pointer text-white rounded-md font-semibold'           
+             >Sign Out</button>
+
+        </div>
+      }
+
     </div>
 
   )
 }
 
 export default Header
- 

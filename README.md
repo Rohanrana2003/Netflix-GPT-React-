@@ -29,3 +29,4 @@
 - Build the Movie List, Movie Card
 - Made the Browse page amazing
 - Created various custom hooks for fetch different movie lists data
+- GPT search feature

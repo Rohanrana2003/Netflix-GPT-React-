@@ -1,3 +1,5 @@
+import { useSelector } from 'react-redux';
+import GptSearch from './GptSearch';
 import Header from './Header'
 import useIndianMovies from './hooks/useIndianMovies';
 import useNowPlayingMovies from './hooks/useNowPlayingMovies'
@@ -16,12 +18,14 @@ const Browse = () => {
   useIndianMovies();
   useUpcoming();
   document.title ='Home - Netflix';
+  const showGpt = useSelector(store => store.gpt.showGPT);
   
   return (
     <div>
       <Header/>
-      <MainContainer/>
-      <SecondaryContainer/>
+      {showGpt && <GptSearch/>}
+      {!showGpt && <MainContainer/>}
+      {!showGpt && <SecondaryContainer/>}
 
     </div>
   )
