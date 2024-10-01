@@ -32,12 +32,11 @@ const GptSearchBar = () => {
     dispatch(addGptMovies({movieNames:movies, movieDetails:tmdbResults}));
   }
 
-
   async function getGroqChatCompletion() {
 
     const gptQuery = 'Act as a Movie Recommendation system and suggest some movies for the query: ' +
       search.current.value +
-      '. only give me names of 5 movies without any other text, comma seperated like the example result given ahead. Example Result: Gadar, Sholay, Don, Dhammal, Dhol';
+      '. only give me names of 5 movies comma seperated and don not wrtie any other text other then then the example result given ahead. Example Result: Gadar, Sholay, Don, Dhammal, Dhol';
 
     return groq.chat.completions.create({
       messages: [{ role: "user", content: gptQuery }],

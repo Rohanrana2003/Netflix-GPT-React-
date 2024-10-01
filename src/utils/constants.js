@@ -9,7 +9,7 @@ export const API_OPTIONS ={
     method: 'GET',
     headers: {
       accept: 'application/json',
-      Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIyOTE4MWM5M2E1M2JiOTRjZGNmMTY2NDU5OWE5ZDNiMyIsIm5iZiI6MTcyNzM1MzYyMy4zMDU3NTgsInN1YiI6IjY2ZjU0YjRiMzMzNWFiYTdhMTczZjU3OSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.qFzUwohWrecumCBTQAniXbs8Xfq903mWr4Ax-gr28xc'
+      Authorization: 'Bearer ' + process.env.REACT_APP_TMDB_KEY
     }
   };
 
@@ -29,4 +29,4 @@ export const LANG_OPTIONS = [
   
     ]
 
-export const OPENAI_KEY = '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';
+export const OPENAI_KEY = process.env.REACT_APP_OPENAI_KEY;

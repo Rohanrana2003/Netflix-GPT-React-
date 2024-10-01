@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { addUser, removeUser } from '../utils/Redux/userSlice';
 import { LANG_OPTIONS, NETFLIX_LOGO } from '../utils/constants';
-import { toggleShowGPT } from '../utils/Redux/gptSlice';
+import { removeGptMovies, toggleShowGPT } from '../utils/Redux/gptSlice';
 import { changeLang } from '../utils/Redux/configSlice';
 
 const Header = () => {
@@ -44,6 +44,7 @@ const Header = () => {
 
   const handleAI = () =>{
     dispatch(toggleShowGPT());
+    dispatch(removeGptMovies())
   }
 
   const handleLanguage = (e) =>{

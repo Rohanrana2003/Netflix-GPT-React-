@@ -17,11 +17,14 @@ import { createSlice } from "@reduxjs/toolkit";
             const {movieNames, movieDetails} = action.payload;
             state.gptMovieNames = movieNames;
             state.gptMovieDetails = movieDetails;
-        }
-
+        },
+         removeGptMovies:(state)=>{
+            state.gptMovieNames = null;
+            state.gptMovieDetails = null;
+         }
     }
  })
 
 
- export const{toggleShowGPT, addGptMovies} = gptSlice.actions;
+ export const{toggleShowGPT, addGptMovies, removeGptMovies} = gptSlice.actions;
  export default gptSlice.reducer;
