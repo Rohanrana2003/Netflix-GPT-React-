@@ -1,10 +1,12 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addNowPlayingMovies } from "../../utils/Redux/movieSlice";
 import { useEffect } from "react";
 import { API_OPTIONS } from "../../utils/constants";
 
 const useNowPlayingMovies = () =>{
+
+    const nowPlayingMovies = useSelector(store => store.gpt.movies?.nowPlayingMovies);
 
     const dispatch = useDispatch();
 
@@ -15,7 +17,7 @@ const useNowPlayingMovies = () =>{
     }
 
     useEffect(() => {
-        getData();
+        !nowPlayingMovies && getData();
     }, [])
 }
 
