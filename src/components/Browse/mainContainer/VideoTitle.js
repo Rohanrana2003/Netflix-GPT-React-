@@ -1,12 +1,12 @@
 
-const VideoTitle = ({title, description}) => {
+const VideoTitle = () => {
 
   return (
     <div className="pt-52 px-[64px] w-[100%] absolute z-30 text-white">
 
-      <h1 className="text-5xl font-semibold py-4">{title}</h1>
+      <h1 className="text-5xl font-semibold py-4">Despicable Me 4</h1>
 
-      <p className="w-1/2">{description}</p>
+      <p className="w-1/2">Gru and Lucy and their girls—Margo, Edith and Agnes—welcome a new member to the Gru family, Gru Jr., who is intent on tormenting his dad. Gru also faces a new nemesis in Maxime Le Mal and his femme fatale girlfriend Valentina, forcing the family to go on the run.</p>
 
       <div className="flex">
         <button className="flex items-center my-10  py-[10px] px-8 gap-2 text-black rounded-md font-semibold text-xl bg-white hover:bg-opacity-70">
@@ -25,3 +25,4 @@ const VideoTitle = ({title, description}) => {
 }
 
 export default VideoTitle
+

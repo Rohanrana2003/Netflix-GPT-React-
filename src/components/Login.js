@@ -6,7 +6,7 @@ import { createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfi
 import {auth} from '../utils/firebase'
 import { useDispatch } from 'react-redux';
 import { addUser } from '../utils/Redux/userSlice';
-import { BACKGROUND_IMG } from '../utils/constants';
+import { BACKGROUND_IMG } from '../utils/Constants/constants';
 
 const Login = () => {
   document.title ='Netflix India - Watch TV Shows Online, Watch Movies Online';

@@ -5,7 +5,7 @@ import { onAuthStateChanged, signOut } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { addUser, removeUser } from '../utils/Redux/userSlice';
-import { LANG_OPTIONS, NETFLIX_LOGO } from '../utils/constants';
+import { LANG_OPTIONS, NETFLIX_LOGO } from '../utils/Constants/constants';
 import { removeGptMovies, toggleShowGPT } from '../utils/Redux/gptSlice';
 import { changeLang } from '../utils/Redux/configSlice';
 
@@ -73,7 +73,7 @@ const Header = () => {
 
             <button onClick={handleAI}
               className='my-5 bg-gradient-to-b from-[rgb(255,0,13)] to-[rgb(175,0,9)] h-fit py-[8px] text-sm px-3 cursor-pointer text-white rounded-md font-semibold' >
-                {showGPT? 'Explore':'AI Recommender'}
+                {showGPT? 'Explore':'NETFLIX GPT'}
             </button>
 
             <button onClick={handleSignout}

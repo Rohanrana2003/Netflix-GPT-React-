@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { API_OPTIONS } from "../../utils/constants";
+import { API_OPTIONS } from "../../utils/Constants/constants";
 import { addPopularMovies } from "../../utils/Redux/movieSlice";
 
 const usePopular = () =>{

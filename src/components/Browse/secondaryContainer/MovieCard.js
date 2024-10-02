@@ -1,5 +1,5 @@
 import React from 'react'
-import { CARD_IMG_URL } from '../utils/constants'
+import { CARD_IMG_URL } from '../../../utils/Constants/constants'
 
 const MovieCard = ({path}) => {
   if(!path)return null;

@@ -2,7 +2,7 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addIndianMovies } from "../../utils/Redux/movieSlice";
-import { API_OPTIONS } from "../../utils/constants";
+import { API_OPTIONS } from "../../utils/Constants/constants";
 const useIndianMovies = () => {
 
   const indianMovies = useSelector(store => store.movies?.indianMovies);
