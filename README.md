@@ -32,3 +32,11 @@
 - GPT search Page
 - GPT search Bar
 - Multi-language functionality in GPT Search page
+- Get AI Key 
+- GPT search API Call
+- Fteched GPT movies suggestions from TMDB API
+- Created GPT Slice and added data
+- Reused MovieList component to show movies suggestions Container
+- Memoization
+- Added .env file to store API Keys
+- Make our site responsive
