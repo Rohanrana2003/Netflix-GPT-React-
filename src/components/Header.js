@@ -53,17 +53,17 @@ const Header = () => {
 
   return (
 
-    <div className='absolute w-[100%] pl-12  pt-1 bg-gradient-to-b from-black z-50 flex justify-between'>
+    <div className='absolute w-[100%] sm:pl-12  pt-1 bg-gradient-to-b from-black z-50 flex  flex-col sm:flex-row justify-between'>
 
-      <img className='w-40 mt-4 ml-5 ' alt="netflix-logo" src={NETFLIX_LOGO} />
+      <img className='w-40 mt-4 sm:ml-5 m-auto  ' alt="netflix-logo" src={NETFLIX_LOGO} />
 
       {user &&
 
-        <div className='flex items-center'>
+        <div className='flex items-center justify-around'>
 
           {
             showGPT && <select onChange={handleLanguage}
-                className='h-8 w-20 outline-none rounded-lg bg-[#111827] text-white mr-5'>
+                className='h-8 w-20 outline-none rounded-lg bg-[#111827] text-white sm:mr-5'>
               {
                 LANG_OPTIONS.map((lang)=><option key={lang.key} value={lang.key}>{lang.name}</option>)
               }
@@ -77,7 +77,7 @@ const Header = () => {
             </button>
 
             <button onClick={handleSignout}
-              className='m-5 mr-14 bg-gradient-to-b from-[rgb(255,0,13)] to-[rgb(175,0,9)] h-fit py-[8px] text-sm px-3 cursor-pointer text-white rounded-md font-semibold'           
+              className='sm:m-5 sm:mr-14 bg-gradient-to-b from-[rgb(255,0,13)] to-[rgb(175,0,9)] h-fit py-[8px] text-sm px-3 cursor-pointer text-white rounded-md font-semibold'           
              >Sign Out</button>
 
         </div>

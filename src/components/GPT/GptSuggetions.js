@@ -7,7 +7,7 @@ const GptSuggetions = () => {
   const {gptMovieNames, gptMovieDetails} = useSelector((store) => store.gpt);
 
   return (
-    <div className='m-20'>
+    <div className='ml-0 sm:ml-10 md:ml-20 pb-9'>
         {
           gptMovieNames && gptMovieNames.map((movieName, i) =>(
             <MovieList key={movieName} title={movieName} movies={gptMovieDetails[i]}/>
