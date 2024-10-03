@@ -1,9 +1,8 @@
 import Groq from "groq-sdk";
-import { OPENAI_KEY } from './Constants/constants';
 
-const groq = new Groq({ 
-    apiKey:OPENAI_KEY,
-    dangerouslyAllowBrowser:true
+const groq = new Groq({
+    apiKey:process.env.REACT_APP_OPENAI_KEY,
+    dangerouslyAllowBrowser: true 
 });
 
 

@@ -28,5 +28,3 @@ export const LANG_OPTIONS = [
       {key:'portuguese' , name:'Portuguese'},
   
     ]
-
-export const OPENAI_KEY = process.env.REACT_APP_OPENAI_KEY;

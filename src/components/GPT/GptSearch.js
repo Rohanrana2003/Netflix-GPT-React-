@@ -4,6 +4,8 @@ import GptSuggetions from './GptSuggetions'
 import { GPT_BACKGROUND_IMG } from '../../utils/Constants/constants'
 
 const GptSearch = () => {
+  document.title ='GPT - Netflix';
+
   return (
     <>
       <div className='fixed -z-10  bg-black'>
