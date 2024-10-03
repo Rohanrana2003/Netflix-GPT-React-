@@ -2,7 +2,7 @@ import React from 'react'
 
 const Footer = () => {
     return (
-        <div className='text-white py-16 px-44 mr-36'>
+        <div className='text-white pl-16 py-10  md:py-16 md:px-44 md:mr-36'>
 
             <div className=" flex gap-6 mb-3 pl-3">
 
@@ -25,34 +25,30 @@ const Footer = () => {
                 </a>
             </div>
 
-            <div className='flex justify-between font-sans text-sm text-[#808080] mb-5'>
-                <ul>
-                    <li className='cursor-pointer py-[5px] hover:underline'>Audio Description</li>
-                    <li className='cursor-pointer py-[5px]  hover:underline'>Investor Relations</li>
-                    <li className='cursor-pointer py-[5px]  hover:underline'>Legal Notices</li>
-                </ul>
-                <ul>
-                    <li className='cursor-pointer py-[5px] hover:underline'>Help Centre</li>
-                    <li className='cursor-pointer py-[5px] hover:underline'>Jobs</li>
-                    <li className='cursor-pointer py-[5px] hover:underline'>Cookie Preferences</li>
+            <div className='font-sans text-sm text-[#808080] mb-5 '>
+                <ul className='grid grid-flow-col grid-cols-2 grid-rows-6  md:grid-cols-3 md:grid-rows-4  lg:grid-cols-4 lg:grid-rows-3'>
+                    <li className='cursor-pointer w-fit py-[5px]  hover:underline'>Audio Description</li>
+                    <li className='cursor-pointer w-fit py-[5px]  hover:underline'>Investor Relations</li>
+                    <li className='cursor-pointer w-fit py-[5px]  hover:underline'>Legal Notices</li>
+                
+                    <li className='cursor-pointer w-fit py-[5px] hover:underline'>Help Centre</li>
+                    <li className='cursor-pointer w-fit py-[5px] hover:underline'>Jobs</li>
+                    <li className='cursor-pointer w-fit py-[5px] hover:underline'>Cookie Preferences</li>
 
+           
+                    <li className='cursor-pointer w-fit py-[5px] hover:underline'>Gift Cards</li>
+                    <li className='cursor-pointer w-fit py-[5px] hover:underline'>Terms of Use</li>
+                    <li className='cursor-pointer w-fit py-[5px] hover:underline'>Corporate Information</li>
+           
+                    <li className='cursor-pointer w-fit py-[5px] hover:underline'>Media Centre</li>
+                    <li className='cursor-pointer w-fit py-[5px] hover:underline'>Privacy</li>
+                    <li className='cursor-pointer w-fit py-[5px] hover:underline'>Contact Us</li>
                 </ul>
-                <ul>
-                    <li className='cursor-pointer py-[5px] hover:underline'>Gift Cards</li>
-                    <li className='cursor-pointer py-[5px] hover:underline'>Terms of Use</li>
-                    <li className='cursor-pointer py-[5px] hover:underline'>Corporate Information</li>
-                </ul>
-                <ul>
-                    <li className='cursor-pointer py-[5px] hover:underline'>Media Centre</li>
-                    <li className='cursor-pointer py-[5px] hover:underline'>Privacy</li>
-                    <li className='cursor-pointer py-[5px] hover:underline'>Contact Us</li>
-                </ul>
-                 
                          
             </div>
 
             <div className='text-[#808080]'>
-                <p className='border border-1 border-[#808080] w-fit text-[13px] p-[3px] px-[4px] mb-2'>Service Code</p>
+                <p className='border border-1 border-[#808080] w-fit text-[13px] p-[3px] px-[4px] mb-2 cursor-pointer hover:text-white'>Service Code</p>
                 <p className='text-[12px]'>©1997-2024 Netflix, Inc.</p>
             </div>
         </div>
